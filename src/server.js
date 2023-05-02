@@ -4,9 +4,15 @@
 
  const app = express();
 
- const handleHome = () => console.log("Somebody is trying to go home.");
+ const handleHome = (req, res) => {
+    return res.end();
+};
+const handleLogin = (req, res) => {
+    return res.send("Login here.");
+};
 
  app.get("/", handleHome);
+ app.get("/login", handleLogin);
 
  const handleListening = () => 
     console.log(`Listening on http://localhost:${PORT} 😘`);
