@@ -1,26 +1,20 @@
  import express from "express";
  import morgan from "morgan";
+ import globalRouter from "./routers/globalRouter";
+ import userRouter from "./routers/userRouter";
+ import videoRouter from "./routers/videoRouter";
 
- const PORT = 4000;
+const PORT = 4000;
 
- const app = express();
- const logger = morgan("dev");
+const app = express();
+const logger = morgan("dev");
+app.use(logger);
 
- const home = (req, res) => {
-  console.log("I will respond.");
-    return res.send("hello");
-};
+app.use("/", globalRouter);
+app.use("/videos", videoRouter);
+app.use("/users", userRouter);
 
-const login = (req,res) => {
-    return res.send("login");
-};
-
- app.use(logger);
- app.get("/", home);
- app.get("/login", login);
-
-
- const handleListening = () => 
+const handleListening = () => 
     console.log(`Listening on http://localhost:${PORT} 😘`);
 
- app.listen(PORT, handleListening);
+app.listen(PORT, handleListening);

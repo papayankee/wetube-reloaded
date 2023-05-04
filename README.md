@@ -1,11 +1,15 @@
 # Wetube Reloaded
 
 / -> Home
-/join -> Login
+/join -> Join
+/login -> Login
 /search -> Search
 
-/edit/user /> Edit user
-/delete/user / Delete User
-/watch-video -> Watch Video
-/edit-video -> Edit Video
-/delete-video -> Delete Video
+/users/edit -> Edit user
+/users/delete -> Delete user
+
+/videos/watch -> Watch Video
+/videos/edit -> Edit Video
+/videos/delete -> Delete Video
+/videos/comments -> Comment on a video
+/videos/comments/delete -> Delete A Comment of a Video
