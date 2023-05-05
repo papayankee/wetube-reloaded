@@ -1,11 +1,10 @@
 import express from "express";
-import {see, edit, upload, deleteVideo} from "../controllers/videoController";
+import {see, edit, deleteStories} from "../controllers/storiesController";
 
-const videoRouter = express.Router();
+const storiesRouter = express.Router();
 
-videoRouter.get("/upload", upload);
-videoRouter.get("/:id(\\d+)", see);
-videoRouter.get("/:id(\\d+)/edit", edit);
-videoRouter.get("/:id(\\d+)/delete", deleteVideo);
+storiesRouter.get("/:id(\\d+)", see);
+storiesRouter.get("/:id(\\d+)/edit", edit);
+storiesRouter.get("/:id(\\d+)/delete", deleteStories);
 
-export default videoRouter;
+export default storiesRouter;
