@@ -27,11 +27,6 @@ app.use(
       next();
     });
   });
-
-  app.get("/add-one", (req, res, next) => {
-    req.session.potato += 1;
-    return res.send(`${req.session.id} ${req.session.potato}`);
-  });
   
 app.use("/", rootRouter);
 app.use("/videos", videoRouter);
